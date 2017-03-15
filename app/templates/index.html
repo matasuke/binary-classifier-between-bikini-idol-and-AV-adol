@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-sm-9 col-md-8 col-lg-6">
+            <div class="text-center">
+                <canvas id="main" style="border: 1px solid" width="512" height="512"></canvas>
+            </div>
+            <!--<p>Drag and drop a image or select it below.</p>-->
+            <form id="img_uplode" class="well" enctype="multiple/form-data">
+                <div class="form-group">
+                    <label for="choose">File input</label>
+                    <input type="file" id="choose" name="img">
+                    <br>
+                    <label for="url">URL</label>
+                    <input type="url" name="image_url" class="form-control">
+                    <span id="message" class="help-block"></span><!--write message when face has deteced-->
+                </div>
+                <input type="submit" class="btn btn-info">
+            </form>
+        </div>
+        <div class="col-xs-8 col-sm-9 col-md-4 col-lg-6">
+            <!--<pre id="response"></pre>-->
+            <table id="faces" class="table border-collapse:collapse">
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -56,7 +56,8 @@ def classifier():
     img2 = base64.encodestring(img2)
 
     img1 = []
-    pre = []
+    pre1 = []
+    pre2 = []
 
     for i in range(0,len(cut_img)):
         
@@ -72,13 +73,15 @@ def classifier():
         x = np.expand_dims(x, axis=0)
         x /= 255.0
         result = model.predict(x)[0]
-        pre.append(str(result[0]))
+        
+        pre1.append(str(result[0]))
+        pre2.append(str(result[1]))
 
     os.remove(tmp)
     os.remove(cut)
     os.remove(rec)
 
-    return jsonify(results=[img2, img1, pre])
+    return jsonify(results=[img2, img1, pre1, pre2])
 
 
 @app.route('/')

@@ -1,1 +1,8 @@
-# binary-classifier-between-bikini-idol-and-AV-idol
+# binary classifier between bikini idol and AV idol
+
+#Description
+
+#Requirements
+
+- Python >= 3.3
+    - Keras >=

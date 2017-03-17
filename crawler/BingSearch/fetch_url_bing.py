@@ -32,40 +32,53 @@ class downloadImgs():
                 'mkt': mkt,
                 'safeSearch': safeSearch,
                 }
-        self.iteration = 1
+        self.querry = querry
+        self.count = count
+        self.offset = offset
+        self.mkt = mkt,
+        self.safeSearch = safeSearch
+        self.iteration = iteration
         self.list = []
 
     def _createList(self):
         r = requests.get(BASE_URL, params=self.params, headers=self.headers).json()
-        self.params['offset'] += self.params['count']
-        for i in range(0, self.params['count']):
-            #name = r['value'][i]['name']
+        for i in range(0, len(r['value'])):
             url = r['value'][i]['contentUrl']
             print(url)
             self.list.append([url])
-    
-    def createLists(self):
+        
+    def createLists(self, saveFile="download_list.csv"):
         for i in range(0, self.iteration):
+            self.list = []
             self._createList()
-            self.params['offset'] += self.params['count']
+            self.params['offset'] += self.count
+            if i == 0:
+                self.saveList(saveFile, head=True)
+            else:
+                self.saveList(saveFile, head=False)
+
             time.sleep(TIME_OUT)
 
-    def saveList(self, saveFile='download_list.csv'):
-        header = [
-                ['querry', self.params['q']],
-                ['count', self.params['count']],
-                ['offset', self.params['offset']],
-                ['mkt', self.params['mkt']],
-                ['safeSearch', self.params['safeSearch']],
-                ['iteration', self.iteration],
-                ['Num of Urls', self.params['count'] * self.iteration]
-                ['Next offset', self.params['offset'] + self.params['count'] * self.iteration]
-                ]
+    def saveList(self, saveFile='download_list.csv', head=True):
+        
+        if head == True:
+            header = [
+                    ['querry', self.querry],
+                    ['count', self.count],
+                    ['offset', self.offset],
+                    ['mkt', self.mkt],
+                    ['safeSearch', self.safeSearch],
+                    ['iteration', self.iteration],
+                    ['Num of Urls', self.count * self.iteration],
+                    ['Next offset', self.offset + self.count * self.iteration]
+                    ]
 
         with open(saveFile, 'a') as f:
             writer = csv.writer(f, lineterminator='\n')
-            writer.writerows(headers)
+            if head == True:
+                writer.writerows(header)
             writer.writerows(self.list)
+
 
 if __name__ == '__main__':
     args = cmd_options.get_arguments()
@@ -78,5 +91,4 @@ if __name__ == '__main__':
     iterate = args.iterate
 
     bing = downloadImgs(querry, count, offset, mkt, safeSearch, iterate)
-    bing.createLists()
-    bing.saveList(saveFile)
+    bing.createLists(saveFile)

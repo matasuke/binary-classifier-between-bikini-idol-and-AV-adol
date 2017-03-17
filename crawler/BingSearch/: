@@ -34,24 +34,20 @@ class downloadImgs():
                 }
         self.list = []
 
-        self.querry = querry
-        self.start = offset
-
     def _createList(self):
         r = requests.get(BASE_URL, params=self.params, headers=self.headers).json()
         self.params['offset'] += self.params['count']
-        for i in range(0, self.params['count']):
-            name = r['value'][i]['name']
-            url = r['value'][i]['contentUrl']
+        for int(i) in range(0, self.params['count']):
+            name = ['value'][i]['name']
+            url = ['value'][i]['contentUrl']
             print(name, url)
             self.list.append([name, url])
-    
+        
     def createLists(self, iteration=1):
         for i in range(0, iteration):
             self._createList()
             self.params['offset'] += self.params['count']
             time.sleep(TIME_OUT)
-            print(self.list)
 
     def saveList(self, saveFile='download_list.csv'):
         with open(saveFile, 'a') as f:

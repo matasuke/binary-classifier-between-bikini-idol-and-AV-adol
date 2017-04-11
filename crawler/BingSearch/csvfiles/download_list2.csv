@@ -4,8 +4,8 @@ offset,15000
 mkt,"('ja-JP',)"
 safeSearch,Off
 iteration,50
-Num of Urls,7500
-Next offset,22500
+Num of Urls,22500
+Next offset,37500
 "http://www.bing.com/cr?IG=6572FD5A4C434B42975106F3D9759062&CID=010F0B867459646A319201CE756865E4&rd=1&h=9mpiwGKv2VXIbfT_b6QfG7_nfYVnt-zaUlPY-jYMSCI&v=1&r=http%3a%2f%2fwww.cherry-mailer.com%2fmt%2f2010%2f07%2f10%2f72152.jpg&p=DevEx,5008.1"
 "http://www.bing.com/cr?IG=6572FD5A4C434B42975106F3D9759062&CID=010F0B867459646A319201CE756865E4&rd=1&h=9CKPfO-DVh-dYO-BGRXyjEooNhOJaK5TiXCdNcX74pg&v=1&r=http%3a%2f%2fblog-imgs-42.fc2.com%2fh%2fi%2fm%2fhimegalnews%2fnba454rdkjmd.jpg&p=DevEx,5014.1"
 "http://www.bing.com/cr?IG=6572FD5A4C434B42975106F3D9759062&CID=010F0B867459646A319201CE756865E4&rd=1&h=yKUnlwtrer7RUolKyrSBbVmFoHYoZlm2_IpeXiaWobs&v=1&r=http%3a%2f%2fblog-imgs-38.fc2.com%2fy%2fa%2fm%2fyamachan01%2f02_20120210130101.jpg&p=DevEx,5020.1"
@@ -4983,14 +4983,6 @@ Next offset,22500
 "http://www.bing.com/cr?IG=47A39A17F7E047AF822E50B2AD127E82&CID=3B91FC3C54B26B761640F67455836A18&rd=1&h=mINzTU3EjiIgeU8qGXFkKdapPFV8YPLSqOfymriwTYs&v=1&r=http%3a%2f%2fimg.momon-ga.com%2fimgs%2f6%2fc%2f6cddbab5-s.jpg&p=DevEx,5590.1"
 "http://www.bing.com/cr?IG=47A39A17F7E047AF822E50B2AD127E82&CID=3B91FC3C54B26B761640F67455836A18&rd=1&h=YpjXR5Nrv8y5Ge4CPqx9z6E8Dm8ghq8VfzJhEU6OyXM&v=1&r=http%3a%2f%2fimg.momon-ga.com%2fimgs%2f1%2f4%2f149be371-s.jpg&p=DevEx,5596.1"
 "http://www.bing.com/cr?IG=47A39A17F7E047AF822E50B2AD127E82&CID=3B91FC3C54B26B761640F67455836A18&rd=1&h=CITExxT8W3OWSO2YYqs61nWfr-d5NnmSoEC36zQP9d4&v=1&r=http%3a%2f%2fimg.momon-ga.com%2fimgs%2fa%2f6%2fa68f6426-s.jpg&p=DevEx,5602.1"
-querry,AV女優
-count,150
-offset,22500
-mkt,"('ja-JP',)"
-safeSearch,Off
-iteration,100
-Num of Urls,15000
-Next offset,37500
 "http://www.bing.com/cr?IG=9FC447FF3A5E404AAF3DC7698B0A47CD&CID=2AE65E79392660760F9E543138176148&rd=1&h=9mpiwGKv2VXIbfT_b6QfG7_nfYVnt-zaUlPY-jYMSCI&v=1&r=http%3a%2f%2fwww.cherry-mailer.com%2fmt%2f2010%2f07%2f10%2f72152.jpg&p=DevEx,5008.1"
 "http://www.bing.com/cr?IG=9FC447FF3A5E404AAF3DC7698B0A47CD&CID=2AE65E79392660760F9E543138176148&rd=1&h=9CKPfO-DVh-dYO-BGRXyjEooNhOJaK5TiXCdNcX74pg&v=1&r=http%3a%2f%2fblog-imgs-42.fc2.com%2fh%2fi%2fm%2fhimegalnews%2fnba454rdkjmd.jpg&p=DevEx,5014.1"
 "http://www.bing.com/cr?IG=9FC447FF3A5E404AAF3DC7698B0A47CD&CID=2AE65E79392660760F9E543138176148&rd=1&h=yKUnlwtrer7RUolKyrSBbVmFoHYoZlm2_IpeXiaWobs&v=1&r=http%3a%2f%2fblog-imgs-38.fc2.com%2fy%2fa%2fm%2fyamachan01%2f02_20120210130101.jpg&p=DevEx,5020.1"

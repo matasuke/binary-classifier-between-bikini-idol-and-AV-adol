@@ -5,4 +5,6 @@
 #Requirements
 
 - Python >= 3.3
-    - Keras >=
+    - Keras >= 1.2
+
+#Usage

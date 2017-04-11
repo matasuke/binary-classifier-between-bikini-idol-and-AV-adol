@@ -76,6 +76,17 @@ class detectFaces():
         self._processFile(source)
         self.imgGray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
 
+    def rotateFrame(self, source):
+        self.processGrayScale(source)
+        rows, cols, channels = self.img.shape)
+        hypot = int(math.hypot(rows, cols))
+        frame = np.zeros((hypot, hypoy), np.uint8)
+        frame[(hypot - rows)*0.5 : (hypot + rows)*0.5, (hypot - cols)*0.5 : (hypot + cols)*0.5] = self.imgGray
+
+        for deg in range(-30, 31, 5):
+            M = cv2.getRotationMatrix2D((hypot * 0.5, hypot * 0.5), -deg, 1.0)
+            rotated = cv2.wrapAffine(frame, M, (hypot, hypot))
+
 class processDir(detectFaces):
     def __init__(self, dir):
         super(processDir, self).__init__()

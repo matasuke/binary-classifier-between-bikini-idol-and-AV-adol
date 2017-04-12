@@ -1,7 +1,7 @@
 .DS_store
-/images/*
-/data/*
-/results/model.json
-/results/weights.hdf5
-/app/models/*
-
+__pycache__
+*.jpg
+*.jpeg
+*.png
+*.json
+*.hdf5

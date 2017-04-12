@@ -59,7 +59,7 @@ class downloadImgs():
 
             time.sleep(TIME_OUT)
 
-    def saveList(self, saveFile='download_list.csv', head=True):
+    def saveList(self, saveFile='csvfiles/download_list.csv', head=True):
         
         if head == True:
             header = [

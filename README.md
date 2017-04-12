@@ -1,10 +1,22 @@
 # binary classifier between bikini idol and AV idol
 
-##Description
+## Description
+This scripts tell the difference between AV idol and bikini idol.
+The accuracy rate is 95.6%.
 
-##Requirements
+## Requirements
 
 - Python >= 3.3
     - Keras >= 1.2
 
-##Usage
+## Usage
+
+### crawler
+
+### detect-faces
+
+### learn
+
+### evaluate
+
+### app

@@ -1,10 +1,10 @@
 # binary classifier between bikini idol and AV idol
 
-#Description
+##Description
 
-#Requirements
+##Requirements
 
 - Python >= 3.3
     - Keras >= 1.2
 
-#Usage
+##Usage

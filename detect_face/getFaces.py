@@ -1,13 +1,16 @@
 import numpy as np
 import os
+from os import path
 import cv2
 import sys
 
 class detectFaces():
     
     def __init__(self):
-        self._cascadePath = "/Users/Matasuke/.pyenv/versions/anaconda3-4.0.0/pkgs/opencv3-3.1.0-py35_0/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml"
-        self._cascade = cv2.CascadeClassifier(self._cascadePath)
+        self.cascade_dir = path.normpath(path.join(cv2.__file__, '..', '..', '..', '..', 'pkgs', 'opencv3-3.1.0-py35_0', 'share', 'OpenCV', 'haarcascades'))
+        #self._cascade_f = "/Users/Matasuke/.pyenv/versions/anaconda3-4.0.0/pkgs/opencv3-3.1.0-py35_0/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml"
+        self._cascade_f = cv2.CascadeClassifier(path.join(self._cascade_dir, 'haarcascade_frontalface_alt.xml')
+        self._cascade_e = cv2.CascadeClassifier(path.join(self._cascade_dir, 'haarcascade_eye.xml')
     
     def _addRectangle(self, color = (255, 0, 0), thickness = 3):
         self.resultImg = self.img
@@ -59,7 +62,7 @@ class detectFaces():
 
     def detectFaces(self, source, scaleFactor=1.1, minNeighbors=1, minSize=(50, 50)):
         self.processGrayScale(source) 
-        self._faces = self._cascade.detectMultiScale(self.imgGray, scaleFactor=scaleFactor, minNeighbors=minNeighbors, minSize=minSize)
+        self._faces = self._cascade_f.detectMultiScale(self.imgGray, scaleFactor=scaleFactor, minNeighbors=minNeighbors, minSize=minSize)
         self.numFaces = len(self._faces)
         
         self.detectedFaces = []
@@ -78,14 +81,18 @@ class detectFaces():
 
     def rotateFrame(self, source):
         self.processGrayScale(source)
-        rows, cols, channels = self.img.shape)
-        hypot = int(math.hypot(rows, cols))
+        rows, cols, channels = self.img.shape
+        hypot = int(math.hypot(rows, cols)) #create rectangle size of hypot
         frame = np.zeros((hypot, hypoy), np.uint8)
         frame[(hypot - rows)*0.5 : (hypot + rows)*0.5, (hypot - cols)*0.5 : (hypot + cols)*0.5] = self.imgGray
 
-        for deg in range(-30, 31, 5):
+        for deg in range(-30, 30, 5):
             M = cv2.getRotationMatrix2D((hypot * 0.5, hypot * 0.5), -deg, 1.0)
             rotated = cv2.wrapAffine(frame, M, (hypot, hypot))
+            faces = self._cascade_f.detectMultiScale(rotated, scaleFactor=1.1, minNeighbors=1, minSize=(50, 50))
+            numFaces = len(faces)
+            for (x, y, w, h) in faces:
+                
 
 class processDir(detectFaces):
     def __init__(self, dir):

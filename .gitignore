@@ -5,3 +5,4 @@ __pycache__
 *.png
 *.json
 *.hdf5
+!.gitkeep

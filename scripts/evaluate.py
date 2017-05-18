@@ -2,7 +2,7 @@ import os
 from keras.models import model_from_json
 from keras.preprocessing.image import ImageDataGenerator
 
-f_model = "./results"
+f_model = "../results"
 fn_model = "model.json"
 fn_weights = "weights.hdf5"
 
@@ -20,7 +20,7 @@ model.compile(loss='binary_crossentropy',
 test_datagen = ImageDataGenerator(rescale=1.0 / 255)
 
 test_generator = test_datagen.flow_from_directory(
-        'data/validation',
+        '../data/validation',
         target_size=(96, 96),
         batch_size=20,
         class_mode='binary')

@@ -5,12 +5,12 @@ import shutil
 
 #change it to be used for variable data;
 
-source_dir = "./images"
+source_dir = "../images"
 AV_dir = "/AVimages"
 bikini_dir = "/ADimages"
 
-train_dir = "./data/train"
-valid_dir = "./data/validation"
+train_dir = "../data/train"
+valid_dir = "../data/validation"
 
 if not os.path.isdir(train_dir + "AV_idols"):
     os.makedirs(train_dir + "/AV_idols")

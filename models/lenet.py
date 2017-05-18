@@ -77,7 +77,7 @@ if __name__ == '__main__':
     model_json_str = model.to_json()
     open('results/model.json', 'w').write(model_json_str)
 
-    model.load_weights(os.path.join("./" + result_dir + "/weights.hdf5"))
+    model.load_weights(os.path.join("../" + result_dir + "/weights.hdf5"))
 
     train_datagen = ImageDataGenerator(
             rescale=1.0 / 255,

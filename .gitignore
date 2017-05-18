@@ -6,4 +6,4 @@ __pycache__
 *.json
 *.hdf5
 !.gitkeep
-settings.py
+*settings.py

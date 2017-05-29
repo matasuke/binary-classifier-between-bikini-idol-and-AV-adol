@@ -48,6 +48,9 @@ class downloadImgs():
             self.list.append([url])
         
     def createLists(self, saveFile="download_list.csv"):
+        if saveFile[-4:] != '.csv':
+            saveFile += '.csv'
+
         for i in range(0, self.iteration):
             self.list = []
             self._createList()
@@ -91,4 +94,5 @@ if __name__ == '__main__':
     iterate = args.iterate
 
     bing = downloadImgs(querry, count, offset, mkt, safeSearch, iterate)
-    bing.createLists(saveFile)
+    #bing.createLists(saveFile)
+    bing.createLists(querry)

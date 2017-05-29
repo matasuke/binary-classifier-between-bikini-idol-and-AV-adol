@@ -3,10 +3,11 @@ import time
 import csv
 import os
 import argparse
+import sys
 
 def download_images(source, target="../../images/Bing", AV=0, ignore=0):
     
-    if not os.path.isfile(source):
+    if not os.path.isfile(source) or os.path.splitext(source)[1] != '.csv':
         print("source directory doesn't exist")
         sys.exit(1)
 

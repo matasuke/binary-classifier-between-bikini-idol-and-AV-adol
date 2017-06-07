@@ -30,7 +30,7 @@ def detect(img):
     for deg in range(-48, 49, 6):
         Mat = cv2.getRotationMatrix2D((hypot * 0.5, hypot * 0.5), deg, 1.0)
         rotated = cv2.warpAffine(rect, Mat, (hypot, hypot))
-        faces = cascade_f.detectMultiScale(rotated, 1.08, minNeighbors=1, minSize=(50, 50))
+        faces = cascade_f.detectMultiScale(rotated, 1.08, minNeighbors=2, minSize=(50, 50))
         
         print('deg:{0} faces:{1}'.format(deg, len(faces)))
 

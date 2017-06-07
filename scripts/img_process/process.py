@@ -9,15 +9,15 @@ formats = ['jpg', 'png', 'jpeg']
 
 def processImg(source, target):
     source = os.path.abspath(source) + '/'
-    target = os.path.abspath(target) + '/' + source.split('/')[-2]
+    target = os.path.abspath(target) + '/'
     files = os.listdir(source)
     
-    if not os.path.exists(target):
-        os.makedirs(target)
-
-    os.chdir(target)
-    
     for f in files:
+        dir_path = target + '/' + f.split('.')[0]
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+        os.chdir(dir_path)
+
         if f.split('.')[-1] in formats:
             f_name = f.split('.')[0] + '_'
             img = cv2.imread(source + f)

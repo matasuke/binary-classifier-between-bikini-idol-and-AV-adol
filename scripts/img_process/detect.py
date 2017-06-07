@@ -2,7 +2,6 @@ import sys
 import cv2
 import numpy as np
 import math
-import imagehash
 from os import path
 
 cascades_dir = path.normpath(path.join(cv2.__file__, '..', '..', '..', '..', 'share', 'OpenCV', 'haarcascades'))

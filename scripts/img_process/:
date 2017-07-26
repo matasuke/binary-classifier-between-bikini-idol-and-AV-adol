@@ -9,9 +9,7 @@ formats = ['jpg', 'png', 'jpeg']
 
 def processImg(source, target):
     source = os.path.abspath(source) + '/'
-    dir_path = os.path.abspath(target) + '/' + source.split('/')[-2]
-    print('source dir:{0}'.format(source))
-    print('target dir:{0}'.format(dir_path))
+    dir_path = os.path.abspath(target) + '/' + source.split('.')[-1] + '/'
     files = os.listdir(source)
     print(dir_path)
     if not os.path.exists(dir_path):

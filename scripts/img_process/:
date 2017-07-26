@@ -1,0 +1,47 @@
+
+
+N, K = map(int, input().split())
+S = input()
+
+
+O = []
+FLAG = 0
+VALID = 1
+
+for i in range(0, N):
+    m = S[i]
+    if m == '1':
+        FLAG = 0
+            if O == []:
+                O.append('1')
+            else:
+                for n, obj in enumerate(O):
+                    O[n] = obj + '1'
+            #add
+    elif m == '0':
+        if FLAG < K:
+           #add 
+        else:
+            VALID = 0
+            break
+        FLAG += 1
+    
+    if m == "?":
+        if FLAG < K:
+            # add both
+        else:
+            #add the other
+
+if VALID:
+    for i in O:
+        print(i)
+else:
+    print('None')
+
+
+def updateList(O, obj):
+    if O == []:
+        O.append(obj)
+    else:
+        for n, t in enumerate(O):
+            O[n] = t + obj

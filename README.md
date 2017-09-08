@@ -11,6 +11,11 @@ The accuracy rate is 95.6%.
 
 ## what to do
 
+- [ ] implements it using chainer
+- [ ] more analysis
+- [ ] collects more data
+- [ ] publish API
+
 ## Usage
 
 ### crawler

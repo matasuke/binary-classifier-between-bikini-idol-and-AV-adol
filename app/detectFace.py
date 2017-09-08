@@ -7,7 +7,7 @@ import sys
 
 def detectFace(pic):
     
-    cascadePath = "/Users/Matasuke/.pyenv/versions/anaconda3-4.0.0/pkgs/opencv3-3.1.0-py35_0/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml"
+    cascadePath = "/Users/Matasuke/.pyenv/versions/anaconda3-4.1.0/pkgs/opencv3-3.1.0-py35_0/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml"
     
     img = cv2.imread(pic)
     img2 = cv2.imread(pic)
